@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Cuttuu Babyyy 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Baloo 2', cursive;
+    overflow-x: hidden;
+    color: #713f5b;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,.7) 0 2px, transparent 3px),
+        linear-gradient(135deg, #ffe5ef, #e8f5ff, #fff0f7);
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatUp linear infinite;
+    opacity: .65;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .7;
+    }
+    100% {
+        transform: translateY(-15vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- MAIN ---------- */
+
+#app {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+}
+
+.page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 18px;
+    animation: pageIn .6s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card {
+    width: min(600px, 94vw);
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(255,255,255,.8);
+    border-radius: 35px;
+    padding: 38px 25px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(190, 120, 160, .2);
+}
+
+/* ---------- TEXT ---------- */
+
+.big-title {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(32px, 8vw, 55px);
+    color: #ef76a7;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(28px, 7vw, 45px);
+    color: #ed79a8;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.small-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 999px;
+    transition: .25s ease;
+    box-shadow: 0 8px 18px rgba(180,100,140,.15);
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+.yes {
+    background: #ff91b8;
+    color: white;
+}
+
+.no {
+    background: #dfeeff;
+    color: #607a98;
+}
+
+.pink-btn {
+    background: #ff9cbe;
+    color: white;
+}
+
+.back-btn {
+    background: #f2dce7;
+    color: #85556d;
+    margin-top: 20px;
+}
+
+/* ---------- REACTION ---------- */
+
+.reaction {
+    min-height: 45px;
+    margin: 15px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ed679c;
+}
+
+.shake {
+    animation: shake .45s ease;
+}
+
+@keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* ---------- CRYING DOODLE ---------- */
+
+.cry-doodle {
+    width: 170px;
+    height: 145px;
+    margin: 15px auto;
+    position: relative;
+    animation: sadBounce 1.5s infinite ease-in-out;
+}
+
+@keyframes sadBounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(7px); }
+}
+
+.face {
+    width: 125px;
+    height: 110px;
+    background: #fffdfb;
+    border-radius: 48% 48% 45% 45%;
+    position: absolute;
+    left: 22px;
+    top: 20px;
+    box-shadow: 0 8px 20px rgba(130,100,110,.12);
+}
+
+.ear {
+    position: absolute;
+    width: 48px;
+    height: 60px;
+    background: #fffdfb;
+    border-radius: 50%;
+    top: 0;
+}
+
+.ear.left {
+    left: 5px;
+    transform: rotate(-25deg);
+}
+
+.ear.right {
+    right: 5px;
+    transform: rotate(25deg);
+}
+
+.eye {
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    background: #553d4c;
+    border-radius: 50%;
+    top: 57px;
+}
+
+.eye.left {
+    left: 48px;
+}
+
+.eye.right {
+    right: 48px;
+}
+
+.mouth {
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    border-bottom: 4px solid #553d4c;
+    border-radius: 50%;
+    left: 50px;
+    top: 78px;
+}
+
+.tear {
+    position: absolute;
+    width: 9px;
+    height: 16px;
+    background: #8bd8ff;
+    border-radius: 50% 50% 55% 55%;
+    top: 73px;
+    animation: tearDrop 1s infinite;
+}
+
+.tear.one {
+    left: 44px;
+}
+
+.tear.two {
+    right: 44px;
+    animation-delay: .25s;
+}
+
+@keyframes tearDrop {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(18px); opacity: .1; }
+}
+
+/* ---------- CHOICES ---------- */
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-top: 25px;
+}
+
+.choice {
+    background: rgba(255,255,255,.9);
+    border: 2px solid #ffd2e3;
+    color: #80516a;
+    padding: 15px 10px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.choice:hover {
+    background: #fff1f7;
+    border-color: #ff9fc2;
+}
+
+.choice.selected {
+    background: #ffb0ca;
+    color: white;
+    border-color: #ff91b8;
+    transform: scale(1.03);
+}
+
+/* ---------- BUBU DUDU ---------- */
+
+.couple {
+    height: 230px;
+    position: relative;
+    margin: 15px auto;
+    max-width: 370px;
+}
+
+.bear {
+    position: absolute;
+    bottom: 15px;
+    width: 115px;
+    height: 130px;
+    border-radius: 48% 48% 35% 35%;
+}
+
+.bear .head {
+    position: absolute;
+    width: 105px;
+    height: 90px;
+    border-radius: 50%;
+    top: -25px;
+    left: 5px;
+}
+
+.bear .ear1,
+.bear .ear2 {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    top: -35px;
+}
+
+.bear .ear1 {
+    left: 5px;
+}
+
+.bear .ear2 {
+    right: 5px;
+}
+
+.bear .eye1,
+.bear .eye2 {
+    position: absolute;
+    width: 9px;
+    height: 12px;
+    background: #3c2930;
+    border-radius: 50%;
+    top: 35px;
+}
+
+.bear .eye1 {
+    left: 32px;
+}
+
+.bear .eye2 {
+    right: 32px;
+}
+
+.bear .nose {
+    position: absolute;
+    width: 13px;
+    height: 9px;
+    background: #4c3138;
+    border-radius: 50%;
+    left: 46px;
+    top: 51px;
+}
+
+.bear.brown {
+    left: 45px;
+    background: #b98162;
+}
+
+.bear.brown .head,
+.bear.brown .ear1,
+.bear.brown .ear2 {
+    background: #b98162;
+}
+
+.bear.white {
+    right: 45px;
+    background: #fffaf7;
+}
+
+.bear.white .head,
+.bear.white .ear1,
+.bear.white .ear2 {
+    background: #fffaf7;
+}
+
+.bouquet {
+    position: absolute;
+    font-size: 55px;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    z-index: 5;
+    animation: bouquet 1.5s infinite ease-in-out;
+}
+
+@keyframes bouquet {
+    0%,100% { transform: translateX(-50%) rotate(-4deg); }
+    50% { transform: translateX(-50%) rotate(5deg); }
+}
+
+/* ---------- PHOTO GALLERY ---------- */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.photo-card {
+    background: white;
+    padding: 7px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(120,80,100,.15);
+    transition: .3s ease;
+}
+
+.photo-card:hover {
+    transform: scale(1.04) rotate(0deg) !important;
+}
+
+.photo-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.photo-card:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo-card:nth-child(3n) {
+    transform: rotate(-3deg);
+}
+
+.gallery-title {
+    font-family: 'Pacifico', cursive;
+    color: #ef76a7;
+    font-size: 28px;
+}
+
+/* ---------- FINAL MESSAGE ---------- */
+
+.final-card {
+    max-width: 720px;
+}
+
+.message-box {
+    text-align: left;
+    background: rgba(255,255,255,.7);
+    border-radius: 25px;
+    padding: 25px;
+    line-height: 1.75;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.message-box p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: #ef76a7;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+/* ---------- SPARKLES ---------- */
+
+.sparkle {
+    position: absolute;
+    font-size: 22px;
+    animation: sparkle 2s infinite;
+}
+
+.s1 { top: 10%; left: 8%; }
+.s2 { top: 20%; right: 8%; animation-delay: .5s; }
+.s3 { bottom: 12%; left: 12%; animation-delay: 1s; }
+.s4 { bottom: 18%; right: 10%; animation-delay: 1.5s; }
+
+@keyframes sparkle {
+    0%,100% { opacity: .3; transform: scale(.8) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.3) rotate(20deg); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 500px) {
+
+    .card {
+        padding: 30px 17px;
+        border-radius: 28px;
+    }
+
+    .subtitle {
+        font-size: 19px;
+    }
+
+    .choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .message-box {
+        font-size: 16px;
+        padding: 19px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 11px 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- FLOATING DECORATIONS -->
+
+    <div class="floating" style="left:5%;font-size:25px;animation-duration:10s;">💗</div>
+    <div class="floating" style="left:18%;font-size:18px;animation-duration:14s;">🎀</div>
+    <div class="floating" style="left:35%;font-size:22px;animation-duration:11s;">💞</div>
+    <div class="floating" style="left:58%;font-size:20px;animation-duration:13s;">💗</div>
+    <div class="floating" style="left:78%;font-size:25px;animation-duration:12s;">🫶🏻</div>
+    <div class="floating" style="left:90%;font-size:18px;animation-duration:15s;">✨</div>
+
+    <!-- ========================================= -->
+    <!-- PAGE 1 -->
+    <!-- ========================================= -->
+
+    <section class="page active" id="page1">
+
+        <span class="sparkle s1">✨</span>
+        <span class="sparkle s2">💗</span>
+        <span class="sparkle s3">🎀</span>
+        <span class="sparkle s4">✨</span>
+
+        <div class="card">
+
+            <div style="font-size:60px;margin-bottom:10px;">
+                🧸🎀
+            </div>
+
+            <h1 class="big-title">
+                Helloo Chotuu<br>
+                babbie 😚💋
+            </h1>
+
+            <p class="subtitle">
+                I have a surprise for youuu... 🥺💗<br>
+                Do u want it? 👉🏻👈🏻🎀
+            </p>
+
+            <div class="reaction" id="reaction1"></div>
+
+            <div class="buttons">
+
+                <button class="yes" onclick="goToPage(2)">
+                    Yesss 💗
+                </button>
+
+                <button class="no" onclick="noFirst()">
+                    No 😭
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- PAGE 2 -->
+    <!-- ========================================= -->
+
+    <section class="page" id="page2">
+
+        <div class="card">
+
+            <div style="font-size:55px;">
+                🥺💗
+            </div>
+
+            <h1 class="title">
+                Do u lovee me?
+            </h1>
+
+            <p class="subtitle">
+                Be honesttt 👀👉🏻👈🏻
+            </p>
+
+            <div class="reaction" id="reaction2"></div>
+
+            <div id="cryingDoodle" style="display:none;">
+
+                <div class="cry-doodle">
+
+                    <div class="ear left"></div>
+                    <div class="ear right"></div>
+
+                    <div class="face">
+
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+
+                        <div class="mouth"></div>
+
+                        <div class="tear one"></div>
+                        <div class="tear two"></div>
+
+                    </div>
+
+                </div>
+
+                <p style="font-size:21px;font-weight:700;">
+                    rula diya mujheee 😭💔
+                </p>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="yes" onclick="goToPage(3)">
+                    Yesss 🥰
+                </button>
+
+                <button class="no" onclick="noLove()">
+                    No 😭
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- PAGE 3 -->
+    <!-- ========================================= -->
+
+    <section class="page" id="page3">
+
+        <div class="card">
+
+            <div style="font-size:45px;">
+                🎀💗🎀
+            </div>
+
+            <h1 class="title">
+                Okaayyy babyyy 🥹
+            </h1>
+
+            <p class="subtitle">
+                Now let's see how well you know<br>
+                what I likeee hehe 🤭💗
+            </p>
+
+            <div id="choiceArea">
+
+                <h2 style="color:#e875a4;">
+                    Beaches or Mountains? 🌊🏔️
+                </h2>
+
+                <div class="choice-grid">
+
+                    <button class="choice" onclick="choose('beaches')">
+                        🌊 Beaches
+                    </button>
+
+                    <button class="choice" onclick="choose('mountains')">
+                        🏔️ Mountains
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- PAGE 4 -->
+    <!-- ========================================= -->
+
+    <section class="page" id="page4">
+
+        <div class="card">
+
+            <div style="font-size:60px;">
+                💐🧸🤎
+            </div>
+
+            <h1 class="title">
+                Will you accept<br>
+                my bouquet? 💐🥺
+            </h1>
+
+            <div class="couple">
+
+                <div class="bear brown">
+
+                    <div class="head"></div>
+                    <div class="ear1"></div>
+                    <div class="ear2"></div>
+
+                    <div class="eye1"></div>
+                    <div class="eye2"></div>
+
+                    <div class="nose"></div>
+
+                </div>
+
+                <div class="bear white">
+
+                    <div class="head"></div>
+                    <div class="ear1"></div>
+                    <div class="ear2"></div>
+
+                    <div class="eye1"></div>
+                    <div class="eye2"></div>
+
+                    <div class="nose"></div>
+
+                </div>
+
+                <div class="bouquet">
+                    💐
+                </div>
+
+            </div>
+
+            <div class="reaction" id="reaction4"></div>
+
+            <div class="buttons">
+
+                <button class="yes" onclick="acceptBouquet()">
+                    Yesss 💗
+                </button>
+
+                <button class="no" onclick="rejectBouquet()">
+                    No 😭
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- PAGE 5 — HAPPY BOYFRIEND DAY -->
+    <!-- ========================================= -->
+
+    <section class="page" id="page5">
+
+        <div class="card">
+
+            <div style="font-size:55px;">
+                🎀💗🧸💐
+            </div>
+
+            <h1 class="big-title">
+                Awww babyyy<br>
+                sweetiee piee 😭💗
+            </h1>
+
+            <h2 class="gallery-title">
+                Happy Boyfriend's Dayyy 🥹🎀
+            </h2>
+
+            <p class="small-text">
+                Here's a little collection of usss 🫂💗
+            </p>
+
+            <div class="gallery">
+
+                <div class="photo-card">
+                    <img src="1.png" alt="Our memory 1">
+                </div>
+
+                <div class="photo-card">
+                    <img src="2.png" alt="Our memory 2">
+                </div>
+
+                <div class="photo-card">
+                    <img src="3.png" alt="Our memory 3">
+                </div>
+
+                <div class="photo-card">
+                    <img src="4.png" alt="Our memory 4">
+                </div>
+
+                <div class="photo-card">
+                    <img src="5.png" alt="Our memory 5">
+                </div>
+
+                <div class="photo-card">
+                    <img src="6.png" alt="Our memory 6">
+                </div>
+
+                <div class="photo-card">
+                    <img src="7.png" alt="Our memory 7">
+                </div>
+
+                <div class="photo-card">
+                    <img src="8.png" alt="Our memory 8">
+                </div>
+
+                <div class="photo-card">
+                    <img src="9.png" alt="Our memory 9">
+                </div>
+
+                <div class="photo-card">
+                    <img src="10.png" alt="Our memory 10">
+                </div>
+
+                <div class="photo-card">
+                    <img src="11.png" alt="Our memory 11">
+                </div>
+
+                <div class="photo-card">
+                    <img src="12.png" alt="Our memory 12">
+                </div>
+
+                <div class="photo-card">
+                    <img src="13.png" alt="Our memory 13">
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="pink-btn" onclick="goToPage(6)">
+                    One more thinggg 👉🏻👈🏻💗
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- PAGE 6 — FINAL MESSAGE -->
+    <!-- ========================================= -->
+
+    <section class="page" id="page6">
+
+        <div class="card final-card">
+
+            <div style="font-size:55px;">
+                🥹🎀💗🫂
+            </div>
+
+            <h1 class="title">
+                Happy Boyfriend Dayyy
+            </h1>
+
+            <div class="message-box">
+
+                <p>
+                    <strong>
+                    Happy Boyfriend Dayyy to my cuttuu babyyy 🥹🎀💗🫂
+                    </strong>
+                </p>
+
+                <p>
+                    Pata hai, hum kitnaaa ladte hain 😭😭 kabhi kabhi toh
+                    lagta hai hum dono ka main kaam hi ek dusre se ladna hai
+                    😭🤦🏻‍♀️ but sach bolu toh, inn saari fights ke beech bhi
+                    I never want to hurt youuu 🥺💗 You’re genuinely such a
+                    sweet, adorable and precious person to me 🫂🫶🏻
+                </p>
+
+                <p>
+                    And omggg your eyes??? 😭👉🏻👈🏻 Those eyes, those lashes,
+                    that smileee, your personalityyy… literally EVERYTHING
+                    about you is so adorableee 😭🎀💗 I swear, jitna bhi bolu
+                    na, sab kam hi lagta hai. 🥹🫂
+                </p>
+
+                <p>
+                    It’s only been 4 months, but somehow you’ve become one of
+                    the most important people in my life, no doubt about that.
+                    🥺💗 And I reallyyy don’t want to leave youuu. I just want
+                    you to stay with me, handle my nakhre, meri bakbak, meri
+                    mood swings aur meri faltu ki fights 😭🫂🎀 because I’m
+                    obviously going to annoy youuu, irritate youuu and
+                    pareshan youuu foreverrr 😭😈💗
+                </p>
+
+                <p>
+                    And haan!!! Aapko mujhe chatpati chizein bhi khilani
+                    thiiii 😤🌶️🌸 Aap bhul rahe hooo!! Aap mujhe khilaoge na
+                    toh mai bahuttt khush rahungi 😭🎀🫶🏻 phir shayad ladungi
+                    bhi nahi… thodi der ke liye 🤭😂💗
+                </p>
+
+                <p>
+                    I just want you to know that I’ll always loveee youuu so
+                    muchhh 🥹💗🫂 No matter how much we fight, you’ll always
+                    be my cuttuu babyyy. 🥺🎀 Please bas aise hi mere saath
+                    rehna, mujhe handle karna aur mujhe kabhi akela mat
+                    chhodnaaa 🫂💗
+                </p>
+
+                <p>
+                    You’re stuck with me now hehe 😈🎀💋
+                </p>
+
+                <div class="signature">
+
+                    I loveee youuu sooooo muchhhh,<br>
+                    my adorable babyyy 😭💗🧿🫂🎀
+
+                    <br><br>
+
+                    Happy Boyfriend Dayyy, cutieee 😚🫶🏻💗
+
+                    <br>
+
+                    *mwahhh* 💋🥺👉🏻👈🏻🎀
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   PAGE SYSTEM
+========================================= */
+
+function goToPage(number) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    const target = document.getElementById('page' + number);
+
+    if (target) {
+        target.classList.add('active');
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+
+/* =========================================
+   FIRST NO BUTTON
+========================================= */
+
+function noFirst() {
+
+    const reaction = document.getElementById('reaction1');
+
+    reaction.innerHTML =
+        "HAWWW 😭 glt baatt!! Aise kaise NO bol diyaaa 😤🎀";
+
+    reaction.classList.remove('shake');
+
+    void reaction.offsetWidth;
+
+    reaction.classList.add('shake');
+}
+
+
+/* =========================================
+   LOVE NO BUTTON
+========================================= */
+
+function noLove() {
+
+    const reaction = document.getElementById('reaction2');
+
+    reaction.innerHTML =
+        "RULAA DIYA MUJHEEE 😭💔";
+
+    reaction.classList.remove('shake');
+
+    void reaction.offsetWidth;
+
+    reaction.classList.add('shake');
+
+    document.getElementById('cryingDoodle').style.display = 'block';
+}
+
+
+/* =========================================
+   CHOICES
+========================================= */
+
+const choices = [
+    {
+        question: "Beaches or Mountains? 🌊🏔️",
+        options: [
+            ["🌊 Beaches", "beaches"],
+            ["🏔️ Mountains", "mountains"]
+        ]
+    },
+    {
+        question: "Ice creams or Chocolates? 🍦🍫",
+        options: [
+            ["🍦 Ice creams", "icecream"],
+            ["🍫 Chocolates", "chocolate"]
+        ]
+    },
+    {
+        question: "Cuddling or Kissing? 🫂💋",
+        options: [
+            ["🫂 Cuddling", "cuddling"],
+            ["💋 Kissing", "kissing"]
+        ]
+    },
+    {
+        question: "Cars or Bikes? 🚗🏍️",
+        options: [
+            ["🚗 Cars", "cars"],
+            ["🏍️ Bikes", "bikes"]
+        ]
+    },
+    {
+        question: "Late night walk or late night drive? 🌙",
+        options: [
+            ["🚶🏻‍♀️ Late night walk", "walk"],
+            ["🚘 Late night drive", "drive"]
+        ]
+    }
+];
+
+let currentChoice = 0;
+
+function renderChoice() {
+
+    const area = document.getElementById('choiceArea');
+
+    const choice = choices[currentChoice];
+
+    area.innerHTML = `
+
+        <h2 style="color:#e875a4;">
+            ${choice.question}
+        </h2>
+
+        <div class="choice-grid">
+
+            <button class="choice"
+                onclick="choose('${choice.options[0][1]}')">
+                ${choice.options[0][0]}
+            </button>
+
+            <button class="choice"
+                onclick="choose('${choice.options[1][1]}')">
+                ${choice.options[1][0]}
+            </button>
+
+        </div>
+
+    `;
+}
+
+function choose(answer) {
+
+    const area = document.getElementById('choiceArea');
+
+    const selected = event.target;
+
+    selected.classList.add('selected');
+
+    setTimeout(() => {
+
+        currentChoice++;
+
+        if (currentChoice < choices.length) {
+
+            renderChoice();
+
+        } else {
+
+            area.innerHTML = `
+
+                <div style="font-size:60px;">
+                    🥹💗✨
+                </div>
+
+                <h2 style="color:#e875a4;font-family:'Pacifico',cursive;font-size:32px;">
+                    Awww babyyy 🥹🎀
+                </h2>
+
+                <p style="font-size:21px;">
+                    Thank you for playing with meee hehe 🤭💗
+                </p>
+
+                <button class="pink-btn"
+                    onclick="goToPage(4)">
+                    Continueee 💐👉🏻👈🏻
+                </button>
+
+            `;
+
+        }
+
+    }, 500);
+}
+
+
+/* =========================================
+   BOUQUET
+========================================= */
+
+function rejectBouquet() {
+
+    const reaction = document.getElementById('reaction4');
+
+    reaction.innerHTML =
+        "U make me upsettt 🥺💔";
+
+    reaction.classList.remove('shake');
+
+    void reaction.offsetWidth;
+
+    reaction.classList.add('shake');
+}
+
+function acceptBouquet() {
+
+    const reaction = document.getElementById('reaction4');
+
+    reaction.innerHTML =
+        "AWWWW BABYYY SWEETIEE PIEEEE 😭💗🎀🫂";
+
+    setTimeout(() => {
+        goToPage(5);
+    }, 1500);
+}
+
+
+/* =========================================
+   HEART CLICK EFFECT
+========================================= */
+
+document.addEventListener('click', function(e) {
+
+    const heart = document.createElement('div');
+
+    heart.innerHTML = ['💗','💖','💕','💞','✨'][Math.floor(Math.random()*5)];
+
+    heart.style.position = 'fixed';
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    heart.style.pointerEvents = 'none';
+    heart.style.zIndex = '9999';
+    heart.style.fontSize = '22px';
+    heart.style.animation = 'clickHeart 1s ease forwards';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 1000);
+
+});
+
+
+const style = document.createElement('style');
+
+style.innerHTML = `
+
+@keyframes clickHeart {
+
+    0% {
+        transform: translate(-50%, -50%) scale(.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -100px)
+            scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+
+/* =========================================
+   START CHOICES
+========================================= */
+
+renderChoice();
+
+</script>
+
+</body>
+</html>
